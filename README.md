@@ -159,7 +159,7 @@ Use `pnpm run pack` to create a publishable tarball under Scratch. It stages rea
 
 ## Publishing
 
-The [publish workflow](.github/workflows/publish.yml) uses the npm trusted publisher configured for `doublesharp/sloth-vdf` and `publish.yml`. It publishes with GitHub OIDC and provenance; no npm token is needed.
+The [publish workflow](.github/workflows/publish.yml) uses the npm trusted publisher configured for `0xdoublesharp/sloth-vdf` and `publish.yml`. It publishes with GitHub OIDC and provenance; no npm token is needed.
 
 1. Bump `package.json` to a new version, commit it, and push it to GitHub.
 2. Create and push a matching tag, such as `v0.0.3` for version `0.0.3`.
@@ -184,6 +184,6 @@ The repaired implementation restores the inter-round permutation and root-sign r
 - [A random zoo: sloth, unicorn, and trx](https://eprint.iacr.org/2015/366), Lenstra and Wesolowski.
 - [Sloth reference implementation](https://github.com/randomchain/pysloth/blob/master/sloth.c).
 - [Reversible proofs of sequential work](https://secpriv.wien/fulltext/publik_302143.pdf), including the signed square-root construction.
-- [abi-typegen](https://github.com/doublesharp/abi-typegen), typed bindings from Foundry artifacts.
+- [abi-typegen](https://github.com/0xdoublesharp/abi-typegen), typed bindings from Foundry artifacts.
 
 The sloth artwork retains the attribution in [sloth.svg](sloth.svg).
