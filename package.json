@@ -41,16 +41,16 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@0xdoublesharp/abi-typegen": "0.8.0",
-    "@types/node": "24.10.0",
-    "@vitest/coverage-v8": "5.0.5",
+    "@0xdoublesharp/abi-typegen": "0.9.1",
+    "@types/node": "24.19.2",
+    "@vitest/coverage-v8": "5.1.0",
     "fast-check": "4.10.2",
-    "forge-std": "https://codeload.github.com/foundry-rs/forge-std/tar.gz/refs/tags/v1.16.2",
-    "typescript": "5.9.3",
-    "viem": "2.57.10",
-    "vitest": "5.0.5"
+    "forge-std": "https://codeload.github.com/foundry-rs/forge-std/tar.gz/refs/tags/v1.17.0",
+    "typescript": "7.0.2",
+    "viem": "2.57.17",
+    "vitest": "5.1.0"
   },
-  "packageManager": "pnpm@11.21.0",
+  "packageManager": "pnpm@12.18.0",
   "engines": {
     "node": ">=22.12.0"
   },

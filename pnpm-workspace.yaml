@@ -1,8 +1,7 @@
 allowBuilds:
   '@0xdoublesharp/abi-typegen': true
 minimumReleaseAgeExclude:
-  - ox@0.14.57
-  - viem@2.57.10
+  - viem@2.57.17
 storeDir: /Volumes/Scratch/sloth-vdf/pnpm/store
 virtualStoreDir: /Volumes/Scratch/sloth-vdf/pnpm/virtual-store/${PWD}
 cacheDir: /Volumes/Scratch/sloth-vdf/pnpm/cache
