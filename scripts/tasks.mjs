@@ -1,5 +1,5 @@
 import { spawnSync } from 'node:child_process';
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, symlinkSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, symlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { build, env, linkOutput, reports, root } from './paths.mjs';
 
@@ -40,23 +40,7 @@ function buildPackage() {
   typegen();
   linkOutput('dist', join(build, 'dist'));
   tsc(['--project', 'tsconfig.json', '--outDir', join(build, 'dist')]);
-  tsc([
-    '--target',
-    'es2020',
-    '--module',
-    'commonjs',
-    '--moduleResolution',
-    'node',
-    '--esModuleInterop',
-    '--strict',
-    '--skipLibCheck',
-    '--declaration',
-    '--outDir',
-    join(build, 'dist/contracts'),
-    ...readdirSync(join(root, 'sdk'))
-      .filter((file) => file.endsWith('.ts'))
-      .map((file) => join(root, 'sdk', file)),
-  ]);
+  tsc(['--project', 'tsconfig.contracts.json', '--outDir', join(build, 'dist/contracts')]);
 }
 function typescript(coverage = false) {
   run('pnpm', ['exec', 'vitest', 'run', '--configLoader', 'runner', ...(coverage ? ['--coverage'] : [])]);

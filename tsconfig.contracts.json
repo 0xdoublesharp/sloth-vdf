@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["sdk/**/*.ts"],
+  "compilerOptions": {
+    "rootDir": "sdk",
+    "outDir": "dist/contracts"
+  }
+}
