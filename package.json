@@ -2,7 +2,14 @@
   "name": "@0xdoublesharp/sloth-vdf",
   "version": "0.0.3",
   "description": "Sloth sequential delay evaluation and verification for TypeScript and Solidity",
-  "repository": "https://github.com/doublesharp/sloth-vdf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xdoublesharp/sloth-vdf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0xdoublesharp/sloth-vdf/issues"
+  },
+  "homepage": "https://github.com/0xdoublesharp/sloth-vdf#readme",
   "scripts": {
     "build": "node scripts/tasks.mjs build",
     "compile": "node scripts/tasks.mjs compile",
