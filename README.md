@@ -15,21 +15,21 @@
 
 Sloth VDF pairs an off-chain TypeScript evaluator with an inexpensive Solidity verifier. It is intended for EVM applications that lock a decision before a result can be computed, including applications on fast chains such as Sonic and HyperEVM.
 
-**Version 0.0.3 repairs the Sloth rounds.** Proofs from `0.0.2` and earlier are incompatible. Upgrade the evaluator and Solidity verifier together, and recompute proofs with the repaired implementation. See the [release notes](CHANGELOG.md).
+**Version 0.0.3 repaired the Sloth rounds; 0.0.4 uses the same proof format.** Proofs from `0.0.2` and earlier are incompatible. Upgrade the evaluator and Solidity verifier together, and recompute proofs with the repaired implementation. See the [release notes](CHANGELOG.md).
 
 ## Quick start
 
 ### Install the package
 
 ```sh
-pnpm add @0xdoublesharp/sloth-vdf@0.0.3
+pnpm add @0xdoublesharp/sloth-vdf@0.0.4
 ```
 
 The package includes the TypeScript evaluator, Solidity sources, and generated viem bindings. Install `viem` if you use the generated bindings. Consumers do not need Foundry or a Scratch volume to use the published package.
 
 ### Develop from source
 
-You need **Node.js 22.12+**, **pnpm 11.21**, [Foundry](https://getfoundry.sh/introduction/installation/) with `forge` and `anvil` on your PATH, and a mounted `/Volumes/Scratch`.
+You need **Node.js 22.12+** on a supported even-numbered release, **pnpm 12.18**, [Foundry 1.8.3+](https://getfoundry.sh/introduction/installation/) with `forge` and `anvil` on your PATH, and a mounted `/Volumes/Scratch`. CI uses Node.js 24 and Foundry 1.8.5.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -38,6 +38,8 @@ pnpm test
 ```
 
 The build compiles Solidity, runs **abi-typegen** to generate viem bindings, and builds the TypeScript package. Build artifacts, generated files, dependency contents, and coverage reports live on Scratch. The checkout contains small links to `dist`, `sdk`, and dependencies for normal local imports.
+
+TypeScript 7 builds the evaluator and generated bindings with separate project configurations. Both emit CommonJS modules and type declarations. Tests use bundler module resolution.
 
 ## How it works
 
@@ -162,7 +164,7 @@ Use `pnpm run pack` to create a publishable tarball under Scratch. It stages rea
 The [publish workflow](.github/workflows/publish.yml) uses the npm trusted publisher configured for `0xdoublesharp/sloth-vdf` and `publish.yml`. It publishes with GitHub OIDC and provenance; no npm token is needed.
 
 1. Bump `package.json` to a new version, commit it, and push it to GitHub.
-2. Create and push a matching tag, such as `v0.0.3` for version `0.0.3`.
+2. Create and push a matching tag, such as `v0.0.4` for version `0.0.4`.
 3. Publish a GitHub release for that tag. The workflow tests the code, checks coverage, builds the tarball, and publishes it to npm.
 
 Stable releases use npm's `latest` tag. Versions with a prerelease suffix, or releases marked as prereleases on GitHub, use `next`. The workflow rejects release tags that do not match the package version.

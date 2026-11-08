@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.4
+
+### Changes
+
+- Update abi-typegen to 0.9.1, viem to 2.57.17, Vitest and V8 coverage to 5.1.0, and forge-std to 1.17.0.
+- Upgrade to TypeScript 7.0.2 and pnpm 12.18.0. Use NodeNext module resolution and explicit source roots for CommonJS builds, with a separate project configuration for generated contract bindings.
+- Update Node.js typings to 24.19.2 to match the Node.js 24 CI runtime. Source development requires Foundry 1.8.3 or newer.
+
+The evaluator API, Solidity contracts, and proof format are unchanged from 0.0.3. Existing 0.0.3 proofs and deployed verifiers remain compatible.
+
 ## 0.0.3
 
 ### Compatibility

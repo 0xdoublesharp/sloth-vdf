@@ -1,6 +1,6 @@
 {
   "name": "@0xdoublesharp/sloth-vdf",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Sloth sequential delay evaluation and verification for TypeScript and Solidity",
   "repository": {
     "type": "git",
