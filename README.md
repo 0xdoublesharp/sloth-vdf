@@ -29,7 +29,7 @@ The package includes the TypeScript evaluator, Solidity sources, and generated v
 
 ### Develop from source
 
-You need **Node.js 22.12+** on a supported even-numbered release, **pnpm 12.18**, [Foundry 1.8.3+](https://getfoundry.sh/introduction/installation/) with `forge` and `anvil` on your PATH, and a mounted `/Volumes/Scratch`. CI uses Node.js 24 and Foundry 1.8.5.
+You need **Node.js 22.12+** on a supported even-numbered release, **pnpm 12.18**, [Foundry 1.8.3+](https://getfoundry.sh/introduction/installation/) with `forge` and `anvil` on your PATH, and a mounted `/Volumes/Scratch`. CI uses Node.js 24, Foundry 1.8.5 for Anvil, and prebuilt forgeds pinned to commit `4ca15fcba25aa61a1b436d28b428e30b459f3d56` through [Setup forgeds and Solar](https://github.com/marketplace/actions/setup-forgeds-and-solar) for compilation and tests.
 
 ```sh
 pnpm install --frozen-lockfile
